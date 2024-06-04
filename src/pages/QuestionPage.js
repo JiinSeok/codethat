@@ -7,9 +7,11 @@ import DateText from '../components/DateText';
 import Lined from '../components/Lined';
 import Warn from '../components/Warn';
 import styles from './QuestionPage.module.css';
+import { useParams } from 'react-router-dom';
 
 function QuestionPage() {
-  const question = getQuestionById('616825');
+  const { questionID } = useParams();
+  const question = getQuestionById(questionID);
 
   return (
     <>

@@ -1,8 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Container from './Container';
 import UserMenu from './UserMenu';
 import logoImg from '../assets/logo.svg';
 import styles from './Nav.module.css';
+
+function getLinkStyle({ isActive }) {
+  return {
+    textDecoration: isActive ? 'underline' : undefined,
+  };
+}
 
 function Nav() {
   return (
@@ -13,10 +19,14 @@ function Nav() {
         </Link>
         <ul className={styles.menu}>
           <li>
-            <Link to="/courses">카탈로그</Link>
+            <NavLink to="/courses" style={getLinkStyle}>
+              카탈로그
+            </NavLink>
           </li>
           <li>
-            <Link to="/questions">커뮤니티</Link>
+            <NavLink to="/questions" style={getLinkStyle}>
+              커뮤니티
+            </NavLink>
           </li>
           <li>
             <UserMenu />
