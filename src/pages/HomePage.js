@@ -1,12 +1,16 @@
-import Button from '../components/Button';
+import { Helmet } from 'react-helmet';
 import Container from '../components/Container';
 import Lined from '../components/Lined';
 import styles from './HomePage.module.css';
 import landingImg from '../assets/landing.svg';
+import Button from '../components/Button';
 
 function HomePage() {
   return (
     <>
+      <Helmet>
+        <title>Codethat - 코딩이 처음이라면, 코드댓</title>
+      </Helmet>
       <div className={styles.bg} />
       <Container className={styles.container}>
         <div className={styles.texts}>
